@@ -178,6 +178,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CidadeController.cs" />
     <Compile Include="Controllers\DepartamentoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -186,6 +187,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Cidade.cs" />
     <Compile Include="Models\Departamento.cs" />
     <Compile Include="Models\EcommerceContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -253,6 +255,11 @@
     <Content Include="Views\Departamento\Details.cshtml" />
     <Content Include="Views\Departamento\Edit.cshtml" />
     <Content Include="Views\Departamento\Index.cshtml" />
+    <Content Include="Views\Cidade\Create.cshtml" />
+    <Content Include="Views\Cidade\Delete.cshtml" />
+    <Content Include="Views\Cidade\Details.cshtml" />
+    <Content Include="Views\Cidade\Edit.cshtml" />
+    <Content Include="Views\Cidade\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
