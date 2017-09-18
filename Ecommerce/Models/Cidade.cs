@@ -25,7 +25,9 @@ namespace Ecommerce.Models
 
         public virtual Departamento Departamentos { get; set; }
 
- 
+        public virtual ICollection<Companhia> Companhia { get; set; }
+
+
 
 
     }

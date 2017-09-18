@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Ecommerce.Models;
+using Ecommerce.Classes;
 
 namespace Ecommerce.Controllers
 {
@@ -39,16 +40,9 @@ namespace Ecommerce.Controllers
         // GET: Cidade/Create
         public ActionResult Create()
         {
-            var Dep = db.Departamentoes.ToList();
-            Dep.Add(new Departamento
-            {
-                DepartamentoId = 0,
-                Nome = "[Selecione um Departamento]"
-            });
+            
 
-           Dep=Dep.OrderBy(d => d.Nome).ToList();
-
-            ViewBag.DepartamentoId = new SelectList(Dep, "DepartamentoId", "Nome");
+            ViewBag.DepartamentoId = new SelectList(ComboHelper.GetDeparatementos(), "DepartamentoId", "Nome");
             return View();
         }
 
@@ -66,16 +60,9 @@ namespace Ecommerce.Controllers
                 return RedirectToAction("Index");
             }
 
-            var Dep = db.Departamentoes.ToList();
-            Dep.Add(new Departamento
-            {
-                DepartamentoId = 0,
-                Nome = "[Selecione um Departamento]"
-            });
+           
 
-            Dep = Dep.OrderBy(d => d.Nome).ToList();
-
-            ViewBag.DepartamentoId = new SelectList(Dep, "DepartamentoId", "Nome");
+            ViewBag.DepartamentoId = new SelectList(ComboHelper.GetDeparatementos(), "DepartamentoId", "Nome");
             return View();
         }
 
@@ -91,7 +78,7 @@ namespace Ecommerce.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.DepartamentoId = new SelectList(db.Departamentoes, "DepartamentoId", "Nome", cidade.DepartamentoId);
+            ViewBag.DepartamentoId = new SelectList(ComboHelper.GetDeparatementos(), "DepartamentoId", "Nome", cidade.DepartamentoId);
             return View(cidade);
         }
 
